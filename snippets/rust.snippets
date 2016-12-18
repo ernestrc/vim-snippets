@@ -184,3 +184,18 @@ snippet as "assert!"
 	assert!(${1:predicate})
 snippet ase "assert_eq!"
 	assert_eq!(${1:expected}, ${2:actual})
+
+# Rux
+snippet handler "Rux Handler implementation"
+	impl Handler for ${1:Type} {
+	    type In = ${2};
+	    type Out = ${3};
+	
+	    fn update(&mut self, epfd: EpollFd) {
+		  ${4}
+	    }
+	
+	    fn ready(&mut self, Self::In) -> Self::Out {
+		  ${5}
+	    }
+	}
