@@ -186,16 +186,10 @@ snippet ase "assert_eq!"
 	assert_eq!(${1:expected}, ${2:actual})
 
 # Rux
-snippet handler "Rux Handler implementation"
-	impl Handler for ${1:Type} {
-	    type In = ${2};
-	    type Out = ${3};
+snippet handler "rux handler implementation"
+	impl Handler<${2}, ${3}> for ${1:type} {
 	
-	    fn update(&mut self, epfd: EpollFd) {
+	    fn ready(&mut self, ${2}) -> ${3} {
 		  ${4}
-	    }
-	
-	    fn ready(&mut self, Self::In) -> Self::Out {
-		  ${5}
 	    }
 	}
